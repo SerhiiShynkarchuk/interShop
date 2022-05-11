@@ -1,16 +1,146 @@
 @import "fonts";
 
-body{
-    background-color: green;
-    span{
-        color: red;
-    }
-    
+body {
+    background-color: brown;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: minmax(auto, 115px) 1fr minmax(auto, 60px);
+        gap: 30px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header header header"
+            "main main main"
+            "footer footer footer";
 
-    @media (max-width: 768px){
-        font-size: 20px;
-    }
-    @media (max-width: 768px){
-        background-color: aqua;
+        .header {
+            display: grid;
+            grid-template-columns: minmax(auto, 370px) minmax(auto, 775px) minmax(auto, 265px);
+            grid-template-rows: minmax(auto, 65px) minmax(auto, 65px);
+            gap: 10px 15px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "logo header-link header-logs"
+                "header-cat header-search header-item";
+            grid-area: header;
+
+            .logo {
+                grid-area: logo;
+            }
+
+            .header-cat {
+                grid-area: header-cat;
+            }
+
+            .header-link {
+                grid-area: header-link;
+            }
+
+            .header-search {
+                grid-area: header-search;
+            }
+
+            .header-logs {
+                grid-area: header-logs;
+            }
+
+            .header-item {
+                grid-area: header-item;
+            }
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: minmax(auto, 152px) minmax(auto, 123px) minmax(auto, 150px);
+            gap: 30px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "goods goods goods"
+                "char-rewiew char-rewiew char-rewiew"
+                "products products products";
+            grid-area: main;
+
+            .goods {
+                display: grid;
+                grid-template-columns: minmax(auto, 120px) minmax(auto, 200px) minmax(auto, 2000px);
+                grid-template-rows: minmax(auto, 58px);
+                gap: 0px 0px;
+                grid-auto-flow: row;
+                grid-template-areas:
+                    "goods-sliper goods-img goods-desc";
+                grid-area: goods;
+            }
+
+            .goods-sliper {
+                grid-area: goods-sliper;
+            }
+
+            .goods-img {
+                grid-area: goods-img;
+            }
+
+            .goods-desc {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                gap: 0px 0px;
+                grid-auto-flow: row;
+                grid-template-areas:
+                    ". . ."
+                    ". . ."
+                    ". . .";
+                grid-area: goods-desc;
+            }
+        }
+
+        .char-rewiew {
+            display: grid;
+            grid-template-columns: minmax(auto, 350px) minmax(auto, 350px);
+            grid-template-rows: minmax(auto, 550px);
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "char rewiew";
+            grid-area: char-rewiew;
+
+            .char {
+                grid-area: char;
+            }
+
+            .rewiew {
+                grid-area: rewiew;
+            }
+
+            .products {
+                display: grid;
+                grid-template-columns: minmax(auto, 1500px);
+                grid-template-rows: minmax(auto, 300px);
+                gap: 0px 0px;
+                grid-auto-flow: row;
+                grid-template-areas:
+                    ".";
+                grid-area: products;
+            }
+        }
+
+        .footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: minmax(20px, 60px);
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "footer-data footer-subscribe";
+            grid-area: footer;
+
+            .footer-data {
+                grid-area: footer-data;
+            }
+
+            .footer-subscribe {
+                grid-area: footer-subscribe;
+            }
+        }
     }
 }
