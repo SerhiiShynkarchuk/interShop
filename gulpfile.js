@@ -1,8 +1,8 @@
-// Основной модуль
+
 import gulp from "gulp";
-// Импорт путей
+
 import { path } from "./gulp/config/path.js";
-// Импорт общих плагинов
+
 import { plugins } from "./gulp/config/plugins.js";
 
 
